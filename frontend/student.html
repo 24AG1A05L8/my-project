@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Rules</title>
+  <link rel="stylesheet" href="css/rules.css">
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html">Child</a></li>
+    <li><a href="student.html" class="active">Student</a></li>
+    <li><a href="traffic.html">Traffic</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<header>
+  <h1>Student Rights</h1>
+</header>
+
+<div class="rule-card">
+  <h3>Right to Equality</h3>
+  <p>No discrimination in educational institutions.</p>
+</div>
+
+<div class="rule-card">
+  <h3>Scholarship Rights</h3>
+  <p>Eligible students can receive government scholarships.</p>
+</div>
+
+<a class="back-btn" href="page3.html">⬅ Back to Categories</a>
+
+</body>
+</html>

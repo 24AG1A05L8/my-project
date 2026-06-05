@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Police Assistance</title>
+  <link rel="stylesheet" href="css/rules.css">
+
+  <style>
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #1e88e5;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1565c0;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+
+    function findPoliceStation() {
+      const village = document.getElementById("village").value;
+      const mandal = document.getElementById("mandal").value;
+      const district = document.getElementById("district").value;
+
+      if (!village || !mandal || !district) {
+        alert("Please fill all details");
+        return;
+      }
+
+      const location = village + ", " + mandal + ", " + district + ", India";
+      const searchQuery = "police station near " + location;
+
+      const mapURL =
+        "https://www.google.com/maps?q=" +
+        encodeURIComponent(searchQuery) +
+        "&output=embed";
+
+      document.getElementById("map").src = mapURL;
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html">Child</a></li>
+    <li><a href="student.ht
+
+

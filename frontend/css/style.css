@@ -1,0 +1,256 @@
+/* RESET */
+/* NAVBAR */
+.navbar {
+  background: #0a3d62;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #ffd700;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #0a3d62;
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f4f6f9;
+  color: #222;
+  min-height: 100vh;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #0a3d62, #1e3799);
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* SEARCH */
+header input {
+  margin-top: 15px;
+  padding: 10px 18px;
+  width: 280px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+}
+
+header input:focus {
+  width: 320px;
+  box-shadow: 0 0 8px #ffd700;
+}
+
+/* RESPONSIVE GRID */
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 50px;
+}
+
+/* ANIMATED BUTTONS */
+.categories button {
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background: white;
+  color: #0a3d62;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover animation */
+.categories button:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  background: #ffd700;
+}
+
+/* Ripple effect */
+.categories button::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  transition: 0.5s;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.categories button:active::after {
+  width: 300px;
+  height: 300px;
+}
+
+/* CARD UI */
+.rule-card {
+  background: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border-left: 6px solid #1e3799;
+}
+
+.rule-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.rule-card h3 {
+  color: #1e3799;
+  margin-bottom: 8px;
+}
+
+.rule-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ADMIN PAGE STYLING */
+form, .admin-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #1e3799;
+  box-shadow: 0 0 6px rgba(30,55,153,0.4);
+  outline: none;
+}
+
+/* PRIMARY BUTTON */
+button {
+  background: #1e3799;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffd700;
+  color: black;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0a3d62;
+  color: white;
+  margin-top: 40px;
+}
+
+/* MOBILE OPTIMIZATION */
+@media(max-width: 768px) {
+  .categories {
+    padding: 20px;
+  }
+
+  header input {
+    width: 90%;
+  }
+}
+
+

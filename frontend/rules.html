@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Law Rules</title>
+  <link rel="stylesheet" href="css/rules.css">
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html">Child</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="traffic.html">Traffic</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<header>
+  <h1 id="pageTitle">Law Rules</h1>
+</header>
+
+<div id="rulesContainer"></div>
+
+<a class="back-btn" href="page3.html">⬅ Back</a>
+
+<script>
+  // Get category from URL
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  const container = document.getElementById("rulesContainer");
+  const title = document.getElementById("pageTitle");
+
+  if (!category) {
+    container.innerHTML = "<p>Category not selected</p>";
+  } else {
+    title.innerText = category.toUpperCase() + " Laws";
+
+    fetch(`http://localhost:3000/api/rules/${category}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.length === 0) {
+          container.innerHTML = "<p>No laws found.</p>";
+          return;
+        }
+
+        data.forEach(rule => {
+          const div = document.createElement("div");
+          div.className = "rule-card";
+          div.innerHTML = `
+            <h3>${rule.article_no}. ${rule.title}</h3>
+            <p>${rule.description}</p>
+          `;
+          container.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        container.innerHTML = "<p>Error loading data</p>";
+      });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Child Rules</title>
+  <link rel="stylesheet" href="css/rules.css">
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html" class="active">Child</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="traffic.html">Traffic</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- PAGE HEADER -->
+<header>
+  <h1>Child Protection Laws</h1>
+</header>
+
+<!-- RULES -->
+<div class="rule-card">
+  <h3>Child Labour Act</h3>
+  <p>Employment of children below 14 years is prohibited.</p>
+</div>
+
+<div class="rule-card">
+  <h3>Right to Education Act</h3>
+  <p>Free and compulsory education for children aged 6–14.</p>
+</div>
+
+<a class="back-btn" href="page3.html">⬅ Back to Categories</a>
+
+</body>
+</html>
+

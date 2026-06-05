@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Law Categories</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+
+    function goToCategory(category) {
+      window.location.href = "rules.html?category=" + category;
+    }
+
+    function goToPage(page) {
+      window.location.href = page;
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html">Child</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="traffic.html">Traffic</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<header>
+  <h1>Law Categories</h1>
+  <input type="search" id="searchBox" placeholder="Search laws...">
+</header>
+
+<div class="categories">
+  <button onclick="goToCategory('women')">Women Rules</button>
+  <button onclick="goToCategory('child')">Child Rules</button>
+  <button onclick="goToCategory('student')">Student Rules</button>
+  <button onclick="goToCategory('traffic')">Traffic Rules</button>
+  <button onclick="goToPage('court.html')">Court Details</button>
+  <button onclick="goToPage('police.html')">Police Station</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Nearest Court</title>
+  <link rel="stylesheet" href="css/rules.css">
+
+  <style>
+    iframe {
+      width: 100%;
+      height: 400px;
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+
+    function findCourt() {
+      const village = document.getElementById("village").value;
+      const mandal = document.getElementById("mandal").value;
+      const district = document.getElementById("district").value;
+
+      if (village === "" || mandal === "" || district === "") {
+        alert("Please fill all details");
+        return;
+      }
+
+      const location = village + ", " + mandal + ", " + district + ", India";
+      const searchQuery = "court near " + location;
+
+      const mapURL =
+        "https://www.google.com/maps?q=" +
+        encodeURIComponent(searchQuery) +
+        "&output=embed";
+
+      document.getElementById("map").src = mapURL;
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html">Child</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="traffic.html">Traffic</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<header>
+  <h1>Find Nearest Court Using Google Maps</h1>
+</header>
+
+<div class="rule-card">
+  <label>Village:</label><br>
+  <input type="text" id="village" placeholder="Enter Village"><br><br>
+
+  <label>Mandal:</label><br>
+  <input type="text" id="mandal" placeholder="Enter Mandal"><br><br>
+
+  <label>District:</label><br>
+  <input type="text" id="district" placeholder="Enter District"><br><br>
+
+  <button onclick="findCourt()">Find Nearest Court</button>
+</div>
+
+<iframe id="map" loading="lazy" allowfullscreen></iframe>
+
+<a class="back-btn" href="page3.html">⬅ Back</a>
+
+</body>
+</html>
+
+
+

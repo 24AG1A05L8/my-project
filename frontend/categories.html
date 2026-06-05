@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Categories</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav-links").classList.toggle("active");
+    }
+
+    function openRules(category) {
+      window.location.href = `rules.html?category=${category}`;
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR (ONLY ONCE) -->
+<nav class="navbar">
+  <div class="logo">🇮🇳 Law Portal</div>
+
+  <ul class="nav-links">
+    <li><a href="page3.html">Home</a></li>
+    <li><a href="women.html">Women</a></li>
+    <li><a href="child.html">Child</a></li>
+    <li><a href="student.html">Student</a></li>
+    <li><a href="traffic.html">Traffic</a></li>
+    <li><a href="admin.html">Admin</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- PAGE CONTENT -->
+<h1>Choose Category</h1>
+
+<div class="category-box">
+  <button onclick="openRules('women')">Women</button>
+  <button onclick="openRules('child')">Child</button>
+  <button onclick="openRules('other')">Remaining</button>
+</div>
+
+</body>
+</html>
+
